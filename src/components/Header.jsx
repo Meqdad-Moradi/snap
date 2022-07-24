@@ -86,95 +86,6 @@ const Header = () => {
                                  planning
                               </a>
                            </li>
-
-
-                           <li>
-                              <a
-                                 href="https://meqdad-moradi.github.io/todo-list/"
-                                 target="blank"
-                              >
-                                 <img src={todoListIcon} alt="" />
-                                 todo list
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#s">
-                                 <img src={calenderIcon} alt="" />
-                                 calender
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#s">
-                                 <img src={reminderIcon} alt="" />
-                                 reminders
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#s">
-                                 <img src={planningIcon} alt="" />
-                                 planning
-                              </a>
-                           </li>
-
-
-
-                           <li>
-                              <a
-                                 href="https://meqdad-moradi.github.io/todo-list/"
-                                 target="blank"
-                              >
-                                 <img src={todoListIcon} alt="" />
-                                 todo list
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#s">
-                                 <img src={calenderIcon} alt="" />
-                                 calender
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#s">
-                                 <img src={reminderIcon} alt="" />
-                                 reminders
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#s">
-                                 <img src={planningIcon} alt="" />
-                                 planning
-                              </a>
-                           </li>
-
-
-
-                           <li>
-                              <a
-                                 href="https://meqdad-moradi.github.io/todo-list/"
-                                 target="blank"
-                              >
-                                 <img src={todoListIcon} alt="" />
-                                 todo list
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#s">
-                                 <img src={calenderIcon} alt="" />
-                                 calender
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#s">
-                                 <img src={reminderIcon} alt="" />
-                                 reminders
-                              </a>
-                           </li>
-                           <li>
-                              <a href="#s">
-                                 <img src={planningIcon} alt="" />
-                                 planning
-                              </a>
-                           </li>
                         </ul>
                      </div>
                   </li>
@@ -216,9 +127,7 @@ const Header = () => {
 
                {/* buttons */}
                <div className="buttons">
-                  <button className="btn" aria-label="login">
-                     login
-                  </button>
+                  <a href="#s" aria-label="login">login</a>
                   <button className="btn" aria-label="register">
                      register
                   </button>

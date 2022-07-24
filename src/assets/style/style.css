@@ -25,6 +25,7 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   color: hsl(0deg, 0%, 8%);
+  background-color: hsl(0deg, 0%, 98%);
 }
 
 h1,
@@ -115,14 +116,8 @@ footer {
   margin-inline: auto;
 }
 
-.btn[aria-label=register],
-.btn[aria-label=login] {
+.btn[aria-label=register] {
   margin-top: 0;
-}
-
-.btn[aria-label=login] {
-  background-color: transparent;
-  color: hsl(0deg, 0%, 8%);
 }
 
 .btn[aria-label=register] {
@@ -131,8 +126,22 @@ footer {
   color: hsl(0deg, 0%, 8%);
 }
 
+a[aria-label=login] {
+  font-weight: 500;
+  transition: color 0.25s ease-in-out;
+}
+a[aria-label=login]:hover {
+  color: hsl(0deg, 0%, 41%);
+}
+
 .header {
   min-height: 70px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: auto;
+  background-color: hsl(0deg, 0%, 98%);
+  z-index: 9999;
 }
 .header .container {
   position: relative;
@@ -207,6 +216,7 @@ footer {
   display: flex;
   gap: 1em;
   margin-left: auto;
+  align-items: center;
 }
 .header .mobile-menu {
   display: none;
@@ -234,7 +244,7 @@ footer {
   padding-top: 8rem;
 }
 .showcase .even-col:first-child h1 {
-  font-size: clamp(3rem, 4.2vw, 5rem);
+  font-size: clamp(2.5rem, 4.2vw, 5rem);
   font-weight: 700;
 }
 .showcase .even-col:nth-child(2) {
@@ -251,15 +261,20 @@ footer {
 }
 
 @media (max-width: 50em) {
+  a[aria-label=login] {
+    text-align: center;
+  }
   .header .primary-nav {
     position: fixed;
     max-width: 15em;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 1000;
     inset: 0 0 auto auto;
     overflow-y: scroll;
+    overflow-x: hidden;
     flex-direction: column;
     align-items: stretch;
+    justify-content: stretch;
     background-color: hsl(0deg, 0%, 98%);
     padding: 1em;
     transform: translateX(100%);
@@ -272,7 +287,7 @@ footer {
   .header .nav-list {
     flex-direction: column;
     gap: 0.5em !important;
-    padding-top: 4em;
+    margin-top: 4em;
   }
   .header .nav-list a {
     padding: 0.5em;
@@ -295,15 +310,20 @@ footer {
   }
   .header .buttons {
     margin-left: 0;
+    margin-top: 2em;
     flex-direction: column;
+  }
+  .header .buttons .btn[aria-label=register] {
+    width: 100%;
   }
   .header .mobile-menu {
     display: grid;
     place-content: center;
-    z-index: 99999;
+    z-index: 9999;
   }
   .showcase .container {
     grid-auto-flow: row;
+    gap: 3em;
   }
   .showcase .even-col:first-child {
     order: 2;

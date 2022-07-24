@@ -1,11 +1,5 @@
-.btn[aria-label="register"],
-.btn[aria-label="login"] {
+.btn[aria-label="register"] {
    margin-top: 0;
-}
-
-.btn[aria-label="login"] {
-   background-color: transparent;
-   color: $dark;
 }
 
 .btn[aria-label="register"] {
@@ -14,8 +8,23 @@
    color: $dark;
 }
 
+a[aria-label="login"] {
+   font-weight: 500;
+   transition: color 0.25s ease-in-out;
+
+   &:hover {
+      color: $gray;
+   }
+}
+
 .header {
    min-height: 70px;
+   position: sticky;
+   top: 0;
+   width: auto;
+   background-color: $white;
+   z-index: 9999;
+   
    .container {
       position: relative;
       display: flex;
@@ -106,6 +115,7 @@
       display: flex;
       gap: 1em;
       margin-left: auto;
+      align-items: center;
    }
 
    .mobile-menu {
@@ -138,7 +148,7 @@
       padding-top: 8rem;
 
       h1 {
-         font-size: clamp(3rem, 4.2vw, 5rem);
+         font-size: clamp(2.5rem, 4.2vw, 5rem);
          font-weight: 700;
       }
    }
@@ -159,18 +169,25 @@
 }
 
 @media (max-width: 50em) {
+   a[aria-label="login"] {
+      text-align: center;
+   }
+
    .header {
       .primary-nav {
          position: fixed;
          max-width: 15em;
-         height: 100vh;
+         min-height: 100vh;
          z-index: 1000;
          inset: 0 0 auto auto;
          overflow-y: scroll;
+         overflow-x: hidden;
 
          flex-direction: column;
          align-items: stretch;
+         justify-content: stretch;
          background-color: $white;
+
          padding: 1em;
          transform: translateX(100%);
          transition: transform 0.3s ease-in-out;
@@ -184,7 +201,7 @@
       .nav-list {
          flex-direction: column;
          gap: 0.5em !important;
-         padding-top: 4em;
+         margin-top: 4em;
 
          a {
             padding: 0.5em;
@@ -209,19 +226,25 @@
 
       .buttons {
          margin-left: 0;
+         margin-top: 2em;
          flex-direction: column;
+
+         .btn[aria-label="register"] {
+            width: 100%;
+         }
       }
 
       .mobile-menu {
          display: grid;
          place-content: center;
-         z-index: 99999;
+         z-index: 9999;
       }
    }
 
    .showcase {
       .container {
          grid-auto-flow: row;
+         gap: 3em;
       }
 
       .even-col:first-child {
