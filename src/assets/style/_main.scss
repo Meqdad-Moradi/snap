@@ -16,8 +16,8 @@
 
 .header {
    min-height: 70px;
-
    .container {
+      position: relative;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -37,6 +37,62 @@
          &:hover,
          &:focus-visible {
             color: $gray;
+         }
+      }
+
+      .primary-nav-link > a {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+
+         img {
+            margin-left: 0.5em;
+         }
+      }
+
+      .sub-menu {
+         position: absolute;
+         left: 0;
+         top: 100%;
+         width: 100%;
+         padding: 1em;
+         border-radius: 0.8em;
+         background-color: $white;
+         box-shadow: 0 0 1.5em -0.5em rgb(0 0 0 / 0.4);
+
+         transform: translateY(-1em);
+         opacity: 0;
+         pointer-events: none;
+         transition: all 0.25s ease-in-out;
+      }
+
+      .primary-nav-link.active > .sub-menu {
+         transform: translateY(0);
+         opacity: 1;
+         pointer-events: all;
+      }
+
+      .primary-nav-link.active > a{
+         color: $gray;
+      }
+
+      .sub-menu-list {
+         a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            padding: 0.5em;
+            border-radius: 0.3em;
+            transition: background-color 0.25s ease-in-out;
+
+            img {
+               margin-right: 0.5em;
+            }
+
+            &:hover {
+               background-color: rgb(0 0 0 / 0.1);
+            }
          }
       }
    }

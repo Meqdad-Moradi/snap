@@ -135,6 +135,7 @@ footer {
   min-height: 70px;
 }
 .header .container {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -150,6 +151,51 @@ footer {
 }
 .header .primary-nav .nav-list a:hover, .header .primary-nav .nav-list a:focus-visible {
   color: hsl(0deg, 0%, 41%);
+}
+.header .primary-nav .primary-nav-link > a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header .primary-nav .primary-nav-link > a img {
+  margin-left: 0.5em;
+}
+.header .primary-nav .sub-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.8em;
+  background-color: hsl(0deg, 0%, 98%);
+  box-shadow: 0 0 1.5em -0.5em rgba(0, 0, 0, 0.4);
+  transform: translateY(-1em);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease-in-out;
+}
+.header .primary-nav .primary-nav-link.active > .sub-menu {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
+}
+.header .primary-nav .primary-nav-link.active > a {
+  color: hsl(0deg, 0%, 41%);
+}
+.header .primary-nav .sub-menu-list a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  transition: background-color 0.25s ease-in-out;
+}
+.header .primary-nav .sub-menu-list a img {
+  margin-right: 0.5em;
+}
+.header .primary-nav .sub-menu-list a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .header .buttons {
   display: flex;
