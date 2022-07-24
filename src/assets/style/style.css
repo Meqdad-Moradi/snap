@@ -24,6 +24,7 @@ body {
   font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
+  color: hsl(0deg, 0%, 8%);
 }
 
 h1,
@@ -39,6 +40,7 @@ h6 {
 
 a {
   text-decoration: none;
+  color: hsl(0deg, 0%, 8%);
 }
 
 p {
@@ -73,9 +75,25 @@ footer {
 .btn {
   display: inline-block;
   margin-top: 2em;
-  padding: 0.3em 1.3em;
+  padding: 0.5em 1.5em;
   text-transform: capitalize;
+  background-color: hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 98%);
+  border-radius: 0.5em;
+  border: 2px solid transparent;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
+.btn:hover, .btn:focus-visible {
+  background-color: transparent;
+  border: 2px solid hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 8%);
+}
+.btn:active {
+  background-color: hsl(0deg, 0%, 41%);
+}
+
 .title {
   font-size: clamp(2rem, 3vw, 3.375rem);
 }
@@ -95,4 +113,80 @@ footer {
   width: 90%;
   max-width: 1100px;
   margin-inline: auto;
+}
+
+.btn[aria-label=register],
+.btn[aria-label=login] {
+  margin-top: 0;
+}
+
+.btn[aria-label=login] {
+  background-color: transparent;
+  color: hsl(0deg, 0%, 8%);
+}
+
+.btn[aria-label=register] {
+  background-color: transparent;
+  border: 2px solid hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 8%);
+}
+
+.header {
+  min-height: 70px;
+}
+.header .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: inherit;
+}
+.header .primary-nav .nav-list {
+  display: flex;
+  gap: 3em;
+}
+.header .primary-nav .nav-list a {
+  transition: color 0.25s ease-in-out;
+}
+.header .primary-nav .nav-list a:hover, .header .primary-nav .nav-list a:focus-visible {
+  color: hsl(0deg, 0%, 41%);
+}
+.header .buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.showcase .container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 8em;
+  grid-auto-columns: 1fr;
+  align-items: center;
+}
+.showcase .even-col:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  min-height: 100%;
+  padding-top: 8rem;
+}
+.showcase .even-col:first-child h1 {
+  font-size: clamp(3rem, 4.2vw, 5rem);
+  font-weight: 700;
+}
+.showcase .icons {
+  margin-top: auto;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2.5em;
+}
+
+@media (max-width: 50em) {
+  .showcase .container {
+    grid-auto-flow: row;
+  }
+  .showcase .even-col:first-child {
+    order: 2;
+    padding-top: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
