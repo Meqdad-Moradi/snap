@@ -8,9 +8,13 @@ import planningIcon from "./../assets/images/icon-planning.svg";
 import arrowDown from "../assets/images/icon-arrow-down.svg";
 import arrowUp from "../assets/images/icon-arrow-up.svg";
 
+import iconMenu from "../assets/images/icon-menu.svg";
+import iconClose from "../assets/images/icon-close-menu.svg";
+
 const Header = () => {
    const [featuresMenu, setFeaturesMenu] = useState(false);
    const [companyMenu, setCompanyMenu] = useState(false);
+   const [toggle, setToggle] = useState(false);
 
    const features = () => {
       setFeaturesMenu(!featuresMenu);
@@ -20,6 +24,10 @@ const Header = () => {
    const company = () => {
       setCompanyMenu(!companyMenu);
       setFeaturesMenu(false);
+   };
+
+   const mobileMenu = () => {
+      setToggle(!toggle);
    };
 
    return (
@@ -33,7 +41,7 @@ const Header = () => {
             </div>
 
             {/* primary navigation */}
-            <nav className="primary-nav">
+            <nav className={!toggle ? "primary-nav" : "primary-nav active"}>
                <ul className="nav-list">
                   <li
                      className={
@@ -52,7 +60,99 @@ const Header = () => {
                      <div className="sub-menu">
                         <ul className="sub-menu-list">
                            <li>
-                              <a href="https://meqdad-moradi.github.io/todo-list/" target="blank">
+                              <a
+                                 href="https://meqdad-moradi.github.io/todo-list/"
+                                 target="blank"
+                              >
+                                 <img src={todoListIcon} alt="" />
+                                 todo list
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#s">
+                                 <img src={calenderIcon} alt="" />
+                                 calender
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#s">
+                                 <img src={reminderIcon} alt="" />
+                                 reminders
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#s">
+                                 <img src={planningIcon} alt="" />
+                                 planning
+                              </a>
+                           </li>
+
+
+                           <li>
+                              <a
+                                 href="https://meqdad-moradi.github.io/todo-list/"
+                                 target="blank"
+                              >
+                                 <img src={todoListIcon} alt="" />
+                                 todo list
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#s">
+                                 <img src={calenderIcon} alt="" />
+                                 calender
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#s">
+                                 <img src={reminderIcon} alt="" />
+                                 reminders
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#s">
+                                 <img src={planningIcon} alt="" />
+                                 planning
+                              </a>
+                           </li>
+
+
+
+                           <li>
+                              <a
+                                 href="https://meqdad-moradi.github.io/todo-list/"
+                                 target="blank"
+                              >
+                                 <img src={todoListIcon} alt="" />
+                                 todo list
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#s">
+                                 <img src={calenderIcon} alt="" />
+                                 calender
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#s">
+                                 <img src={reminderIcon} alt="" />
+                                 reminders
+                              </a>
+                           </li>
+                           <li>
+                              <a href="#s">
+                                 <img src={planningIcon} alt="" />
+                                 planning
+                              </a>
+                           </li>
+
+
+
+                           <li>
+                              <a
+                                 href="https://meqdad-moradi.github.io/todo-list/"
+                                 target="blank"
+                              >
                                  <img src={todoListIcon} alt="" />
                                  todo list
                               </a>
@@ -113,15 +213,25 @@ const Header = () => {
                      <a href="#s">about</a>
                   </li>
                </ul>
+
+               {/* buttons */}
+               <div className="buttons">
+                  <button className="btn" aria-label="login">
+                     login
+                  </button>
+                  <button className="btn" aria-label="register">
+                     register
+                  </button>
+               </div>
             </nav>
 
-            {/* buttons */}
-            <div className="buttons">
-               <button className="btn" aria-label="login">
-                  login
-               </button>
-               <button className="btn" aria-label="register">
-                  register
+            {/* mobile menu */}
+            <div className="mobile-menu">
+               <button
+                  className={!toggle ? "toggle-btn" : "toggle-btn active"}
+                  onClick={() => mobileMenu()}
+               >
+                  <img src={toggle ? iconClose : iconMenu} alt="" />
                </button>
             </div>
          </div>

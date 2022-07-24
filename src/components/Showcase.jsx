@@ -16,7 +16,7 @@ const Showcase = () => {
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Debitis quia excepturi pariatur. Officia, blanditiis tempore.
                </p>
-               <a href="#" className="btn">
+               <a href="#s" className="btn">
                   learn more
                </a>
 
