@@ -20,9 +20,9 @@
    .container {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       align-items: center;
       min-height: inherit;
+      gap: 3em;
    }
 
    .primary-nav {
@@ -44,6 +44,7 @@
    .buttons {
       display: flex;
       gap: 1em;
+      margin-left: auto;
    }
 }
 
@@ -66,6 +67,13 @@
       h1 {
          font-size: clamp(3rem, 4.2vw, 5rem);
          font-weight: 700;
+      }
+   }
+
+   .even-col:nth-child(2) {
+      padding-top: 4em;
+      img {
+         max-width: 90%;
       }
    }
 
